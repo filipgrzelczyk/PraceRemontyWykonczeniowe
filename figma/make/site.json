@@ -1,0 +1,10 @@
+{
+  "description": "A premium, responsive website showcasing high-quality renovation services, building trust and driving client inquiries through elegant design and clear CTAs.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
