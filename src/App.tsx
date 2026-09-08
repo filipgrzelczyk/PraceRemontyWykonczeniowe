@@ -1,5 +1,12 @@
 import { useEffect, useRef, useState } from "react"
 
+import imgSypialniePoddasze from "./assets/portfolio/sypialnia-poddasze.jpg"
+import imgLazienkiPrysznic from "./assets/portfolio/lazienka-prysznic.jpg"
+import imgWiataMagazynek from "./assets/portfolio/wiata-magazynek.jpg"
+import imgWiataPodjazd from "./assets/portfolio/wiata-podjazd.jpg"
+import imgLazienkiCzarna from "./assets/portfolio/lazienka-czarna.jpg"
+import imgSypialnieCzarna from "./assets/portfolio/sypialnia-czarna.jpg"
+
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
@@ -43,12 +50,6 @@ const SERVICES = [
     desc: "Układanie płytek oraz kompleksowe przygotowanie powierzchni w łazienkach i kuchniach.",
     img: "https://images.unsplash.com/photo-1756079664354-34944e001f6d?w=900&h=1100&fit=crop&auto=format",
   },
-  {
-    n: "06",
-    title: "Zabudowy i montaż",
-    desc: "Realizacja zabudów, detali oraz montaż elementów wyposażenia dopasowanych do projektu.",
-    img: "https://images.unsplash.com/photo-1737737180662-b3664e1741fd?w=900&h=1100&fit=crop&auto=format",
-  },
 ]
 
 const PROCESS = [
@@ -62,51 +63,46 @@ const PROCESS = [
 
 const PROJECTS = [
   {
-    title: "Apartament nad Wisłą",
-    scope: "Remont generalny · wykończenie",
-    place: "Warszawa, Powiśle",
-    year: "2025",
-    desc: "Pełen remont 78 m² z otwarciem kuchni na salon, nowe tynki, gładzie i mikrocement w łazienkach.",
-    img: "https://images.unsplash.com/photo-1772475385317-09f9ef320474?w=1400&h=1000&fit=crop&auto=format",
-    span: "lg:col-span-8",
+    title: "Sypialnie",
+    img: imgSypialniePoddasze,
+    span: "lg:col-span-7",
     ratio: "aspect-[7/5]",
   },
   {
-    title: "Dom pod Krakowem",
-    scope: "Wykończenie pod klucz",
-    place: "Zabierzów",
-    year: "2024",
-    desc: "Wykończenie parteru domu jednorodzinnego — gładzie, malowanie, glazura i zabudowy.",
-    img: "https://images.unsplash.com/photo-1738748444676-113d30c9a25b?w=900&h=1200&fit=crop&auto=format",
-    span: "lg:col-span-4",
-    ratio: "aspect-[3/4]",
-  },
-  {
-    title: "Łazienka minimal",
-    scope: "Glazurnictwo · montaż",
-    place: "Wrocław",
-    year: "2024",
-    desc: "Wielkoformatowa glazura, ukryte oświetlenie i precyzyjne fugowanie w tonacji stone.",
-    img: "https://images.unsplash.com/photo-1756079664354-34944e001f6d?w=900&h=1200&fit=crop&auto=format",
+    title: "Łazienki",
+    img: imgLazienkiPrysznic,
     span: "lg:col-span-5",
     ratio: "aspect-[3/4]",
   },
   {
-    title: "Loft w kamienicy",
-    scope: "Remont generalny",
-    place: "Łódź, Śródmieście",
-    year: "2023",
-    desc: "Rewitalizacja wnętrza w zabytkowej kamienicy z zachowaniem wysokości i detalu.",
-    img: "https://images.unsplash.com/photo-1689043528099-2ba014dd7c64?w=1400&h=1000&fit=crop&auto=format",
+    title: "Wiata",
+    img: imgWiataMagazynek,
+    span: "lg:col-span-5",
+    ratio: "aspect-[3/4]",
+  },
+  {
+    title: "Wiata",
+    img: imgWiataPodjazd,
     span: "lg:col-span-7",
     ratio: "aspect-[7/5]",
+  },
+  {
+    title: "Łazienki",
+    img: imgLazienkiCzarna,
+    span: "lg:col-span-6",
+    ratio: "aspect-[4/5]",
+  },
+  {
+    title: "Sypialnie",
+    img: imgSypialnieCzarna,
+    span: "lg:col-span-6",
+    ratio: "aspect-[4/5]",
   },
 ]
 
 const STATS = [
-  { value: "140+", label: "zrealizowanych wnętrz" },
-  { value: "12 lat", label: "doświadczenia w zawodzie" },
-  { value: "3", label: "województwa działania" },
+  { value: "100+", label: "zrealizowanych wnętrz" },
+  { value: "13 lat", label: "doświadczenia w zawodzie" },
   { value: "100%", label: "prac oddanych w terminie" },
 ]
 
@@ -116,27 +112,7 @@ const VALUES = [
   "Jakość wykonania",
   "Indywidualne podejście",
   "Transparentna komunikacja",
-]
-
-const TESTIMONIALS = [
-  {
-    quote:
-      "Przemek zrobił nam remont mieszkania od zera. Największe wrażenie robi precyzja — równe ściany, idealne kąty i pełen porządek każdego dnia.",
-    name: "Marta K.",
-    scope: "Remont generalny · Warszawa",
-  },
-  {
-    quote:
-      "Rzadko spotykana rzetelność. Ustalony termin i budżet zostały dotrzymane co do dnia. Polecam bez wahania.",
-    name: "Tomasz R.",
-    scope: "Wykończenie domu · Kraków",
-  },
-  {
-    quote:
-      "Łazienka wygląda jak z magazynu wnętrzarskiego. Doradził rozwiązania, o których sam bym nie pomyślał.",
-    name: "Agnieszka W.",
-    scope: "Glazurnictwo · Wrocław",
-  },
+  "Praca bez pośredników",
 ]
 
 /* ------------------------------------------------------------------ */
@@ -253,10 +229,10 @@ function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="tel:+48600000000"
+            href="tel:+48661407147"
             className="hidden font-mono text-xs tracking-wide text-[var(--ink)] hover:text-[var(--clay)] md:block"
           >
-            +48 600 000 000
+            +48 661 407 147
           </a>
           <a
             href="#kontakt"
@@ -592,8 +568,8 @@ function Projects() {
       />
 
       <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-12">
-        {PROJECTS.map((p) => (
-          <article key={p.title} className={`reveal group ${p.span ?? "lg:col-span-6"}`}>
+        {PROJECTS.map((p, i) => (
+          <article key={`${p.title}-${i}`} className={`reveal group ${p.span ?? "lg:col-span-6"}`}>
             <div className={`relative overflow-hidden bg-[var(--stone-200)] ${p.ratio}`}>
               <img
                 src={p.img}
@@ -602,19 +578,10 @@ function Projects() {
                 className="h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-90" />
-              <span className="absolute right-4 top-4 bg-[var(--stone-50)]/90 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--ink)]">
-                {p.year}
-              </span>
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--stone-200)]">
-                  {p.scope} · {p.place}
-                </p>
-                <h3 className="mt-2 font-display text-3xl font-light text-[var(--stone-50)] md:text-4xl">
+                <h3 className="font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--stone-50)]">
                   {p.title}
                 </h3>
-                <p className="mt-3 max-w-md text-sm leading-relaxed text-[var(--stone-100)]/0 transition-all duration-500 group-hover:text-[var(--stone-100)]/85">
-                  {p.desc}
-                </p>
               </div>
             </div>
           </article>
@@ -637,7 +604,7 @@ function Projects() {
 function Stats() {
   return (
     <section className="border-y border-[var(--border)] bg-[var(--stone-100)]">
-      <div className="mx-auto grid max-w-[1600px] grid-cols-2 gap-px bg-[var(--border)] lg:grid-cols-4">
+      <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-px bg-[var(--border)] sm:grid-cols-3">
         {STATS.map((s) => (
           <div key={s.label} className="reveal bg-[var(--stone-100)] px-6 py-12 text-center md:py-16">
             <div className="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-light leading-none tracking-tight text-[var(--ink)]">
@@ -690,8 +657,8 @@ function About() {
           <div className="reveal mt-8 max-w-xl space-y-5 text-base leading-relaxed text-[var(--muted-foreground)]">
             <p>
               Od ponad dekady wykańczam mieszkania i domy — od gładzi i tynków po glazurę i finalne
-              detale. Pracuję sam lub z zaufanym, stałym zespołem, dzięki czemu utrzymuję ten sam
-              standard na każdym etapie.
+              detale. Działam sam, bez zespołu, dzięki czemu przez cały czas realizacji osobiście
+              odpowiadam za jakość i przebieg każdego etapu prac.
             </p>
             <p>
               Nie ukrywam kosztów, nie zostawiam prac „na później” i sprzątam po sobie każdego dnia.
@@ -713,44 +680,9 @@ function About() {
 
           <div className="reveal mt-8">
             <p className="font-mono text-xs uppercase tracking-[0.16em] text-[var(--muted-foreground)]">
-              Obszar działania — Warszawa, Kraków, Wrocław i okolice
+              Obszar działania — Szczecin i okolice
             </p>
           </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ------------------------------------------------------------------ */
-/*  Testimonials                                                       */
-/* ------------------------------------------------------------------ */
-
-function Testimonials() {
-  return (
-    <section className="border-t border-[var(--border)] py-24 md:py-36">
-      <div className="mx-auto max-w-[1600px] px-5 md:px-10">
-        <div className="reveal mb-14 flex items-center gap-4">
-          <span className="font-mono text-xs text-[var(--muted-foreground)]">05</span>
-          <span className="h-px w-10 bg-[var(--border)]" />
-          <Kicker>Co mówią klienci</Kicker>
-        </div>
-
-        <div className="grid gap-px overflow-hidden border border-[var(--border)] bg-[var(--border)] lg:grid-cols-3">
-          {TESTIMONIALS.map((t) => (
-            <figure key={t.name} className="reveal flex flex-col justify-between bg-[var(--stone-50)] p-8 md:p-10">
-              <blockquote className="font-display text-xl font-light leading-snug text-[var(--ink)] md:text-2xl">
-                <span className="text-[var(--clay)]">“</span>
-                {t.quote}
-              </blockquote>
-              <figcaption className="mt-8 border-t border-[var(--border)] pt-5">
-                <p className="text-sm font-medium text-[var(--ink)]">{t.name}</p>
-                <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[var(--muted-foreground)]">
-                  {t.scope}
-                </p>
-              </figcaption>
-            </figure>
-          ))}
         </div>
       </div>
     </section>
@@ -773,7 +705,7 @@ function Contact() {
           {/* Left */}
           <div className="lg:col-span-5">
             <div className="reveal mb-6 flex items-center gap-4">
-              <span className="font-mono text-xs text-[var(--stone-200)]/50">06</span>
+              <span className="font-mono text-xs text-[var(--stone-200)]/50">05</span>
               <span className="h-px w-10 bg-[var(--stone-50)]/20" />
               <span className="font-mono text-[11px] uppercase tracking-[0.28em] text-[var(--clay)]">
                 Kontakt
@@ -788,14 +720,14 @@ function Contact() {
 
             <div className="reveal mt-10 space-y-1">
               <a
-                href="tel:+48600000000"
+                href="tel:+48661407147"
                 className="group flex items-baseline justify-between border-t border-[var(--stone-50)]/15 py-5"
               >
                 <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-[var(--stone-200)]/60">
                   Telefon
                 </span>
                 <span className="font-display text-2xl text-[var(--stone-50)] transition-colors group-hover:text-[var(--clay)]">
-                  +48 600 000 000
+                  +48 661 407 147
                 </span>
               </a>
               <a
@@ -814,7 +746,7 @@ function Contact() {
                   Obszar
                 </span>
                 <span className="font-display text-xl text-[var(--stone-50)] md:text-2xl">
-                  Warszawa · Kraków · Wrocław
+                  Szczecin i okolice
                 </span>
               </div>
             </div>
@@ -921,8 +853,8 @@ function Footer() {
             ))}
           </nav>
           <div className="md:col-span-3 md:text-right">
-            <a href="tel:+48600000000" className="block text-sm transition-colors hover:text-[var(--clay)]">
-              +48 600 000 000
+            <a href="tel:+48661407147" className="block text-sm transition-colors hover:text-[var(--clay)]">
+              +48 661 407 147
             </a>
             <a
               href="mailto:kontakt@slomczynski.pl"
@@ -931,10 +863,12 @@ function Footer() {
               kontakt@slomczynski.pl
             </a>
             <div className="mt-3 flex gap-4 md:justify-end">
-              <a href="#" className="font-mono text-[11px] uppercase tracking-[0.14em] hover:text-[var(--clay)]">
-                Instagram
-              </a>
-              <a href="#" className="font-mono text-[11px] uppercase tracking-[0.14em] hover:text-[var(--clay)]">
+              <a
+                href="https://www.facebook.com/profile.php?id=100007031791902"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[11px] uppercase tracking-[0.14em] hover:text-[var(--clay)]"
+              >
                 Facebook
               </a>
             </div>
@@ -958,7 +892,7 @@ function FloatingCTA() {
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-px border-t border-[var(--border)] bg-[var(--border)] lg:hidden">
       <a
-        href="tel:+48600000000"
+        href="tel:+48661407147"
         className="flex items-center justify-center gap-2 bg-[var(--stone-50)] py-4 text-sm font-medium text-[var(--ink)]"
       >
         <span className="text-[var(--clay)]">✆</span> Zadzwoń
@@ -990,7 +924,6 @@ export default function App() {
         <Projects />
         <Stats />
         <About />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />
